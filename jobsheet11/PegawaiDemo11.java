@@ -1,19 +1,17 @@
-import java.util.ArrayList;
-
 public class PegawaiDemo11 {
     public static void main(String[] args) {
         Dosen11 dosen1 = new Dosen11("19940201", "Widia, S.Kom. M.Kom", "199420");
-        Dosen11 dosen2 = new Dosen11("19700105", "Muhammad, S.T, M.T", "197001");
-        TenagaKependidikan11 tendik1 = new TenagaKependidikan11("19750301", "Aida, A.Md.", "Tenaga Administrasi");
-        TenagaKependidikan11 tendik2 = new TenagaKependidikan11("19650304", "Rika, S.T", "Tenaga Laboratorium");
+        
+        Pegawai11 pegawai1 = dosen1;
 
-        ArrayList<Pegawai11> daftarPegawai = new ArrayList<Pegawai11>();
+        System.out.println(pegawai1.nip);
+        System.out.println(pegawai1.nama);
+        pegawai1.displayInfo();
 
-        daftarPegawai.add(dosen1);
-        daftarPegawai.add(dosen2);
-        daftarPegawai.add(tendik1);
-        daftarPegawai.add(tendik2);
+        Dosen11 newDosen = (Dosen11) pegawai1;
 
-        System.out.println("Jumlah Pegawai: " + daftarPegawai.size());
+        System.out.println(newDosen.nama);
+        System.out.println(newDosen.nidn);
+        newDosen.mengajar();
     }
 }
